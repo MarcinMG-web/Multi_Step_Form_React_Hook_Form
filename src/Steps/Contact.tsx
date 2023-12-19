@@ -57,7 +57,7 @@ export default function Contact(): JSX.Element {
           />
         </Field>
 
-        <Button>Next {'>'}</Button>
+        <Button position='right'>Next {'>'}</Button>
       </fieldset>
     </Form>
   );

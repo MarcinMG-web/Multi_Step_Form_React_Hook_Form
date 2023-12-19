@@ -1,16 +1,31 @@
-import { ReactNode, forwardRef } from 'react';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonProps = {
+interface ButtonWrapperProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'primary';
-};
+  position?: 'left' | 'center' | 'right';
+}
 
-export const Button = forwardRef(
-  ({ children, variant = 'primary', ...rest }: ButtonProps) => {
-    return (
-      <button className={`btn btn-${variant}`} {...rest}>
+export const Button: React.FC<ButtonWrapperProps> = ({
+  children,
+  position = 'left',
+  ...rest
+}) => {
+  const getPositionClass = () => {
+    switch (position) {
+      case 'center':
+        return 'mx-auto';
+      case 'right':
+        return 'ms-auto';
+      default:
+        return undefined; 
+    }
+  };
+
+  return (
+    <div className={`d-flex ${getPositionClass()}`}>
+      <button className='btn btn-primary' {...rest}>
         {children}
       </button>
-    );
-  }
-);
+    </div>
+  );
+};

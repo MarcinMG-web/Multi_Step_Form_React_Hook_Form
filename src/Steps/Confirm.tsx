@@ -48,9 +48,9 @@ export default function Confirm() {
           <div>{formValues.about}</div>
         </SectionRow>
       </Section>
-      
+
       <div className='d-flex justify-content-start'>
-        <Button>Submit</Button>
+        <Button position='center'>Submit</Button>
       </div>
     </Form>
   );
