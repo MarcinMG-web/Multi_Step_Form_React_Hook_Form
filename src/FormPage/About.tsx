@@ -1,14 +1,13 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAppState } from '../globalState/AppState';
-import { Button, Field, Form, Input } from '../Forms';
+import { useAppState } from '../GlobalState/AppState';
+import { Button, Field, Form } from '../FormWrapper';
 
-interface EducationValues {
-  university: string;
-  degree: string;
+interface AboutValues {
+  about: string;
 }
 
-export default function Education(): JSX.Element {
+export default function About(): JSX.Element {
   const {
     state: { formValues },
     dispatch,
@@ -17,28 +16,24 @@ export default function Education(): JSX.Element {
   const { handleSubmit, register } = useForm({ defaultValues: formValues });
   const navigate = useNavigate();
 
-  const saveData = (pageValues: EducationValues) => {
+  const saveData = (pageValues: AboutValues) => {
     dispatch({
       type: 'UPDATE_FORM_VALUES',
       payload: { ...formValues, ...pageValues },
     });
-    navigate('/about');
+    navigate('/confirm');
   };
 
   return (
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
-        <legend>Education</legend>
-        <Field label='University'>
-          <Input {...register('university')} id='university' />
-        </Field>
-
-        <Field label='Degree'>
-          <Input {...register('degree')} id='degree' />
+        <legend>About</legend>
+        <Field label='About me'>
+          <textarea {...register('about')} className='form-control' />
         </Field>
 
         <div className='button-row'>
-          <Link className={`btn btn-secondary`} to='/'>
+          <Link className={`btn btn-secondary`} to='/education'>
             {'<'} Previous
           </Link>
           <Button>Next {'>'}</Button>

@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { useAppState } from '../globalState/AppState';
+import { useAppState } from '../GlobalState/AppState';
 
-import { Button, Form, Section, SectionRow } from '../Forms';
-import { State } from '../globalState/Interface';
+import { Button, Form, Section, SectionRow } from '../FormWrapper';
+import { State } from '../GlobalState/Interface';
 
 export default function Confirm() {
   const {

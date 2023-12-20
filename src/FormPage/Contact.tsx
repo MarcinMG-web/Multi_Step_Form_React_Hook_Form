@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, Field, Form, Input } from '../Forms';
-import { useAppState } from '../globalState/AppState';
+import { Button, Field, Form, Input } from '../FormWrapper';
+import { useAppState } from '../GlobalState/AppState';
 
 interface ContactValues {
   firstName: string;
@@ -38,14 +38,12 @@ export default function Contact(): JSX.Element {
         <Field label='First name' error={errors?.firstName}>
           <Input
             {...register('firstName', { required: 'First name is required' })}
-            id='first-name'
           />
         </Field>
 
         <Field label='Last name' error={errors?.lastName}>
           <Input
             {...register('lastName', { required: 'Last name is required' })}
-            id='last-name'
           />
         </Field>
 
@@ -53,7 +51,6 @@ export default function Contact(): JSX.Element {
           <Input
             {...register('email', { required: 'Email is required' })}
             type='email'
-            id='email'
           />
         </Field>
 
