@@ -2,26 +2,28 @@ import { useForm } from 'react-hook-form';
 import { useAppState } from '../GlobalState/AppState';
 
 import { Button, Form, Section, SectionRow } from '../FormWrapper';
-import { State } from '../GlobalState/Interface';
-import { useNavigate } from 'react-router-dom';
 
-export default function Confirm() {
+import { useNavigate } from 'react-router-dom';
+import IFormData from '../Interfaces/formInterface';
+
+export default function Review(): JSX.Element {
   const {
     state: { formValues },
   } = useAppState();
   const { handleSubmit } = useForm({ defaultValues: formValues });
 
   const navigate = useNavigate();
-  const submitData = (pageValues: State['formValues']) => {
+  const submitData = (pageValues: IFormData) => {
     // Submit data to the server
     console.info(pageValues);
-    
-    navigate('/success');
+
+    // navigate('/success');
+    navigate('/error');
   };
 
   return (
     <Form onSubmit={handleSubmit(submitData)}>
-      <h1 className='mb-4'>Confirm</h1>
+      <h1 className='mb-4'>Review</h1>
       <Section title='Personal info' url='/'>
         <SectionRow>
           <div>First name</div>
