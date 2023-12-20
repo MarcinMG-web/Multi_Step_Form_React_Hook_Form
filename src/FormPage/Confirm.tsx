@@ -13,10 +13,10 @@ export default function Confirm() {
 
   const navigate = useNavigate();
   const submitData = (pageValues: State['formValues']) => {
-    console.info(pageValues);
-    navigate('/success');
-
     // Submit data to the server
+    console.info(pageValues);
+    
+    navigate('/success');
   };
 
   return (

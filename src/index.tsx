@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 
 import 'bootstrap/scss/bootstrap.scss';
 import { AppProvider } from './GlobalState/AppState';
