@@ -32,11 +32,11 @@ export default function Education(): JSX.Element {
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>Education</legend>
-        <Field label={UNIVERSITY}>
+        <Field label='University'>
           <Input {...register(UNIVERSITY)} />
         </Field>
 
-        <Field label={DEGREE}>
+        <Field label='Degree'>
           <Input {...register(DEGREE)} />
         </Field>
 

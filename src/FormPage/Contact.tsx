@@ -39,7 +39,7 @@ export default function Contact(): JSX.Element {
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>Contact</legend>
-        <Field label={FIRST_NAME} error={errors?.firstName}>
+        <Field label='First name' error={errors?.firstName}>
           <Input
             {...register(FIRST_NAME, {
               required: 'First name is required',
@@ -47,7 +47,7 @@ export default function Contact(): JSX.Element {
           />
         </Field>
 
-        <Field label={LAST_NAME} error={errors?.lastName}>
+        <Field label='Last Name' error={errors?.lastName}>
           <Input
             {...register(LAST_NAME, {
               required: 'Last name is required',
@@ -55,7 +55,7 @@ export default function Contact(): JSX.Element {
           />
         </Field>
 
-        <Field label={EMAIL} error={errors?.email}>
+        <Field label='Email' error={errors?.email}>
           <Input
             {...register(EMAIL, { required: 'Email is required' })}
             type='email'

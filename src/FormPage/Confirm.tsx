@@ -3,6 +3,7 @@ import { useAppState } from '../GlobalState/AppState';
 
 import { Button, Form, Section, SectionRow } from '../FormWrapper';
 import { State } from '../GlobalState/Interface';
+import { useNavigate } from 'react-router-dom';
 
 export default function Confirm() {
   const {
@@ -10,8 +11,11 @@ export default function Confirm() {
   } = useAppState();
   const { handleSubmit } = useForm({ defaultValues: formValues });
 
+  const navigate = useNavigate();
   const submitData = (pageValues: State['formValues']) => {
     console.info(pageValues);
+    navigate('/success');
+
     // Submit data to the server
   };
 
@@ -43,7 +47,7 @@ export default function Confirm() {
           <div>{formValues.degree}</div>
         </SectionRow>
       </Section>
-      
+
       <Section title='About' url='/about'>
         <SectionRow>
           <div>About me</div>

@@ -31,7 +31,7 @@ export default function About(): JSX.Element {
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>About</legend>
-        <Field label={ABOUT}>
+        <Field label='About'>
           <textarea {...register(ABOUT)} className='form-control' />
         </Field>
 

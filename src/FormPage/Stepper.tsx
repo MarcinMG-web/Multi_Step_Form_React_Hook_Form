@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-export default function Stepper(): JSX.Element {
+export default function Stepper() {
   const location = useLocation();
 
   const getLinkClass = (path: Location['pathname']) => {
