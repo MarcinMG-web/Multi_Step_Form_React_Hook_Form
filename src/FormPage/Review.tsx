@@ -5,6 +5,7 @@ import { Button, Form, Section, SectionRow } from '../FormWrapper';
 
 import { useNavigate } from 'react-router-dom';
 import IFormData from '../Interfaces/formInterface';
+import submitForm from '../services/apiServices';
 
 export default function Review(): JSX.Element {
   const {
@@ -13,12 +14,14 @@ export default function Review(): JSX.Element {
   const { handleSubmit } = useForm({ defaultValues: formValues });
 
   const navigate = useNavigate();
-  const submitData = (pageValues: IFormData) => {
-    // Submit data to the server
-    console.info(pageValues);
+  const submitData = async (pageValues: IFormData) => {
+    const { status } = await submitForm(pageValues);
 
-    // navigate('/success');
-    navigate('/error');
+    if (status !== 200) {
+      navigate('/error');
+    } else {
+      navigate('/success');
+    }
   };
 
   return (
