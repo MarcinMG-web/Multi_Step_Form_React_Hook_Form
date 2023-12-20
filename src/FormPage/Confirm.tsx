@@ -32,6 +32,7 @@ export default function Confirm() {
           <div>{formValues.email}</div>
         </SectionRow>
       </Section>
+
       <Section title='Education' url='/education'>
         <SectionRow>
           <div>University</div>
@@ -42,6 +43,7 @@ export default function Confirm() {
           <div>{formValues.degree}</div>
         </SectionRow>
       </Section>
+      
       <Section title='About' url='/about'>
         <SectionRow>
           <div>About me</div>

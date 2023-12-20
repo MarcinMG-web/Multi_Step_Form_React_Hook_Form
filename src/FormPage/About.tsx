@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAppState } from '../GlobalState/AppState';
 import { Button, Field, Form } from '../FormWrapper';
+import EInputName from '../Enums/formEnum';
 
 interface AboutValues {
   about: string;
@@ -24,12 +25,14 @@ export default function About(): JSX.Element {
     navigate('/confirm');
   };
 
+  const { ABOUT } = EInputName;
+
   return (
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>About</legend>
-        <Field label='About me'>
-          <textarea {...register('about')} className='form-control' />
+        <Field label={ABOUT}>
+          <textarea {...register(ABOUT)} className='form-control' />
         </Field>
 
         <div className='button-row'>

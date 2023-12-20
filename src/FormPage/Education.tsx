@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAppState } from '../GlobalState/AppState';
 import { Button, Field, Form, Input } from '../FormWrapper';
+import EInputName from '../Enums/formEnum';
 
 interface EducationValues {
   university: string;
@@ -25,16 +26,18 @@ export default function Education(): JSX.Element {
     navigate('/about');
   };
 
+  const { UNIVERSITY, DEGREE } = EInputName;
+
   return (
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>Education</legend>
-        <Field label='University'>
-          <Input {...register('university')} />
+        <Field label={UNIVERSITY}>
+          <Input {...register(UNIVERSITY)} />
         </Field>
 
-        <Field label='Degree'>
-          <Input {...register('degree')} />
+        <Field label={DEGREE}>
+          <Input {...register(DEGREE)} />
         </Field>
 
         <div className='button-row'>

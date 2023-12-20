@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button, Field, Form, Input } from '../FormWrapper';
 import { useAppState } from '../GlobalState/AppState';
+import EInputName from '../Enums/formEnum';
 
 interface ContactValues {
   firstName: string;
@@ -31,25 +32,32 @@ export default function Contact(): JSX.Element {
     });
     navigate('/education');
   };
+
+  const { FIRST_NAME, LAST_NAME, EMAIL } = EInputName;
+
   return (
     <Form onSubmit={handleSubmit(saveData)}>
       <fieldset>
         <legend>Contact</legend>
-        <Field label='First name' error={errors?.firstName}>
+        <Field label={FIRST_NAME} error={errors?.firstName}>
           <Input
-            {...register('firstName', { required: 'First name is required' })}
+            {...register(FIRST_NAME, {
+              required: 'First name is required',
+            })}
           />
         </Field>
 
-        <Field label='Last name' error={errors?.lastName}>
+        <Field label={LAST_NAME} error={errors?.lastName}>
           <Input
-            {...register('lastName', { required: 'Last name is required' })}
+            {...register(LAST_NAME, {
+              required: 'Last name is required',
+            })}
           />
         </Field>
 
-        <Field label='Email' error={errors?.email}>
+        <Field label={EMAIL} error={errors?.email}>
           <Input
-            {...register('email', { required: 'Email is required' })}
+            {...register(EMAIL, { required: 'Email is required' })}
             type='email'
           />
         </Field>
