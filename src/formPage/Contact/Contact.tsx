@@ -69,7 +69,9 @@ export default function Contact(): JSX.Element {
         errors={errors.email}
       />
 
-      <Button position='right'>Next {'>'}</Button>
+      <div className='button-row'>
+        <Button position='right'>Next {'>'}</Button>
+      </div>
     </Form>
   );
 }
