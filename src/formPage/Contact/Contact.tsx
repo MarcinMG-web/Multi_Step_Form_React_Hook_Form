@@ -8,7 +8,7 @@ import {
   emailRules,
   firstNameRules,
   lastNameRules,
-} from './Validations/validation';
+} from './validations/validation';
 
 interface ContactValues {
   firstName: string;

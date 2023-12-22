@@ -4,7 +4,7 @@ import { useAppState } from '../../globalState/AppState';
 import { Button, Form, SelectField } from '../../formWrapper';
 import EInputName from '../../enums/formEnum';
 import { degreeOptions, universityOption } from './utils/options';
-import { degreeRules, universityRules } from './Validations/validation';
+import { degreeRules, universityRules } from './validations/validation';
 
 interface EducationValues {
   university: string;

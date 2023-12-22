@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAppState } from '../../globalState/AppState';
 import { Button, Form, TextareaField } from '../../formWrapper';
 import EInputName from '../../enums/formEnum';
+import { aboutRules } from './validations/validation';
 
 interface AboutValues {
   about: string;
@@ -40,7 +41,7 @@ export default function About(): JSX.Element {
         label='About'
         name={ABOUT}
         control={control}
-        rules={{ required: 'About is required' }}
+        rules={aboutRules}
         errors={errors.about}
       />
 
