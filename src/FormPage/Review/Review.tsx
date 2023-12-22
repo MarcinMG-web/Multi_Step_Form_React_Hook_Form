@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { useAppState } from '../GlobalState/AppState';
+import { useAppState } from '../../GlobalState/AppState';
 
-import { Button, Form, Section, SectionRow } from '../FormWrapper';
+import { Button, Form, Section, SectionRow } from '../../FormWrapper';
 
 import { useNavigate } from 'react-router-dom';
-import IFormData from '../Interfaces/formInterface';
-import submitForm from '../services/apiServices';
+import IFormData from '../../Interfaces/formInterface';
+import submitForm from '../../Services/apiServices';
 
 export default function Review(): JSX.Element {
   const {
