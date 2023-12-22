@@ -1,13 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import React from 'react';
 
-import Contact from './FormPage/Contact/Contact';
-import Education from './FormPage/Education/Education';
-import About from './FormPage/About/About';
-import Review from './FormPage/Review/Review';
-import Stepper from './FormPage/Navigation/Stepper';
-import FinalStep from './FormPage/FinalStep/FinalStep';
-import Error from './FormPage/Error/Error';
+import Contact from './formPage/Contact/Contact';
+import Education from './formPage/Education/Education';
+import About from './formPage/About/About';
+import Review from './formPage/Review/Review';
+import Stepper from './formPage/Navigation/Stepper';
+import FinalStep from './formPage/FinalStep/FinalStep';
+import Error from './formPage/Error/Error';
 
 export default function App(): JSX.Element {
   const { pathname } = useLocation();

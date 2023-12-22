@@ -1,4 +1,4 @@
-import IFormData from "../Interfaces/formInterface";
+import IFormData from '../interfaces/formInterface';
 
 // State
 export interface State {

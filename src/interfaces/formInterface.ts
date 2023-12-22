@@ -1,4 +1,4 @@
-import EInputName from '../Enums/formEnum';
+import EInputName from '../enums/formEnum';
 
 interface IFormData {
   [EInputName.FIRST_NAME]: string;

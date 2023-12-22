@@ -1,21 +1,23 @@
 import React from 'react';
 import { Control, Controller, FieldValues } from 'react-hook-form';
-import IFormData from '../Interfaces/formInterface';
+import IFormData from '../interfaces/formInterface';
 
-interface TextareaFieldProps {
+interface InputFieldProps {
   label: string;
   name: keyof IFormData;
   control: Control<IFormData>;
   rules?: Object;
   errors?: FieldValues;
+  type?: 'text' | 'number' | 'email' | 'password';
 }
 
-export const TextareaField: React.FC<TextareaFieldProps> = ({
+export const InputField: React.FC<InputFieldProps> = ({
   label,
   name,
   control,
   rules,
   errors,
+  type = 'text',
 }) => {
   return (
     <label className='form-label'>
@@ -26,7 +28,7 @@ export const TextareaField: React.FC<TextareaFieldProps> = ({
         rules={rules}
         render={({ field }) => (
           <>
-            <textarea className='form-control' {...field} />
+            <input type={type} className='form-control' {...field} />
             {errors && <small className='error'>{errors.message}</small>}
           </>
         )}

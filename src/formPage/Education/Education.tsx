@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAppState } from '../../GlobalState/AppState';
-import { Button, Form, SelectField } from '../../FormWrapper';
-import EInputName from '../../Enums/formEnum';
+import { useAppState } from '../../globalState/AppState';
+import { Button, Form, SelectField } from '../../formWrapper';
+import EInputName from '../../enums/formEnum';
 import { degreeOptions, universityOption } from './utils/options';
 import { degreeRules, universityRules } from './Validations/validation';
 

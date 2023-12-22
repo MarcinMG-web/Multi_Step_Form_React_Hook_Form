@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import 'bootstrap/scss/bootstrap.scss';
-import { AppProvider } from './GlobalState/AppState';
+import { AppProvider } from './globalState/AppState';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 

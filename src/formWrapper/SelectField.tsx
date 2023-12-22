@@ -1,23 +1,23 @@
 import React from 'react';
 import { Control, Controller, FieldValues } from 'react-hook-form';
-import IFormData from '../Interfaces/formInterface';
+import IFormData from '../interfaces/formInterface';
 
-interface InputFieldProps {
+interface SelectFieldProps {
   label: string;
   name: keyof IFormData;
+  options: string[];
   control: Control<IFormData>;
   rules?: Object;
   errors?: FieldValues;
-  type?: 'text' | 'number' | 'email' | 'password';
 }
 
-export const InputField: React.FC<InputFieldProps> = ({
+export const SelectField: React.FC<SelectFieldProps> = ({
   label,
   name,
+  options,
   control,
   rules,
   errors,
-  type = 'text',
 }) => {
   return (
     <label className='form-label'>
@@ -28,7 +28,14 @@ export const InputField: React.FC<InputFieldProps> = ({
         rules={rules}
         render={({ field }) => (
           <>
-            <input type={type} className='form-control' {...field} />
+            <select className='form-control' {...field}>
+              <option value=''>--Please choose an option--</option>
+              {options.map((el) => (
+                <option key={el} value={el}>
+                  {el}
+                </option>
+              ))}
+            </select>
             {errors && <small className='error'>{errors.message}</small>}
           </>
         )}

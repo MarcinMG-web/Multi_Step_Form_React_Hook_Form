@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, InputField, Form } from '../../FormWrapper';
-import { useAppState } from '../../GlobalState/AppState';
-import EInputName from '../../Enums/formEnum';
+import { Button, InputField, Form } from '../../formWrapper';
+import { useAppState } from '../../globalState/AppState';
+import EInputName from '../../enums/formEnum';
 import {
   emailRules,
   firstNameRules,

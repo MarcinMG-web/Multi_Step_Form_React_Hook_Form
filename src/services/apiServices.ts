@@ -1,5 +1,5 @@
-import IFormData from '../Interfaces/formInterface';
-import HttpMethod from '../Types/types';
+import IFormData from '../interfaces/formInterface';
+import HttpMethod from '../types/types';
 
 /**
  * Config

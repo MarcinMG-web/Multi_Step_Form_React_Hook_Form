@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAppState } from '../../GlobalState/AppState';
-import { Button, Form, TextareaField } from '../../FormWrapper';
-import EInputName from '../../Enums/formEnum';
+import { useAppState } from '../../globalState/AppState';
+import { Button, Form, TextareaField } from '../../formWrapper';
+import EInputName from '../../enums/formEnum';
 
 interface AboutValues {
   about: string;

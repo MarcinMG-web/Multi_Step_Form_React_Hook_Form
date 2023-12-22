@@ -1,20 +1,18 @@
 import React from 'react';
 import { Control, Controller, FieldValues } from 'react-hook-form';
-import IFormData from '../Interfaces/formInterface';
+import IFormData from '../interfaces/formInterface';
 
-interface SelectFieldProps {
+interface TextareaFieldProps {
   label: string;
   name: keyof IFormData;
-  options: string[];
   control: Control<IFormData>;
   rules?: Object;
   errors?: FieldValues;
 }
 
-export const SelectField: React.FC<SelectFieldProps> = ({
+export const TextareaField: React.FC<TextareaFieldProps> = ({
   label,
   name,
-  options,
   control,
   rules,
   errors,
@@ -28,14 +26,7 @@ export const SelectField: React.FC<SelectFieldProps> = ({
         rules={rules}
         render={({ field }) => (
           <>
-            <select className='form-control' {...field}>
-              <option value=''>--Please choose an option--</option>
-              {options.map((el) => (
-                <option key={el} value={el}>
-                  {el}
-                </option>
-              ))}
-            </select>
+            <textarea className='form-control' {...field} />
             {errors && <small className='error'>{errors.message}</small>}
           </>
         )}
