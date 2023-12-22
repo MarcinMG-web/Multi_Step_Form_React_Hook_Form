@@ -1,5 +1,5 @@
 import React from 'react';
-import { Control, Controller, FieldValues } from 'react-hook-form';
+import { Control, Controller, FieldError } from 'react-hook-form';
 import IFormData from '../interfaces/formInterface';
 
 interface SelectFieldProps {
@@ -8,17 +8,17 @@ interface SelectFieldProps {
   options: string[];
   control: Control<IFormData>;
   rules?: Object;
-  errors?: FieldValues;
+  errors?: FieldError;
 }
 
-export const SelectField: React.FC<SelectFieldProps> = ({
+export function SelectField({
   label,
   name,
   options,
   control,
   rules,
   errors,
-}) => {
+}: SelectFieldProps) {
   return (
     <label className='form-label'>
       {label}:
@@ -42,4 +42,4 @@ export const SelectField: React.FC<SelectFieldProps> = ({
       />
     </label>
   );
-};
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Control, Controller, FieldValues } from 'react-hook-form';
+import { Control, Controller, FieldError } from 'react-hook-form';
 import IFormData from '../interfaces/formInterface';
 
 interface TextareaFieldProps {
@@ -7,16 +7,16 @@ interface TextareaFieldProps {
   name: keyof IFormData;
   control: Control<IFormData>;
   rules?: Object;
-  errors?: FieldValues;
+  errors?: FieldError;
 }
 
-export const TextareaField: React.FC<TextareaFieldProps> = ({
+export function TextareaField({
   label,
   name,
   control,
   rules,
   errors,
-}) => {
+}: TextareaFieldProps) {
   return (
     <label className='form-label'>
       {label}:
@@ -33,4 +33,4 @@ export const TextareaField: React.FC<TextareaFieldProps> = ({
       />
     </label>
   );
-};
+}

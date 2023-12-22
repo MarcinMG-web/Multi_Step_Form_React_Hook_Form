@@ -1,5 +1,5 @@
 import React from 'react';
-import { Control, Controller, FieldValues } from 'react-hook-form';
+import { Control, Controller, FieldError } from 'react-hook-form';
 import IFormData from '../interfaces/formInterface';
 
 interface InputFieldProps {
@@ -7,18 +7,18 @@ interface InputFieldProps {
   name: keyof IFormData;
   control: Control<IFormData>;
   rules?: Object;
-  errors?: FieldValues;
+  errors?: FieldError;
   type?: 'text' | 'number' | 'email' | 'password';
 }
 
-export const InputField: React.FC<InputFieldProps> = ({
+export function InputField({
   label,
   name,
   control,
   rules,
   errors,
   type = 'text',
-}) => {
+}: InputFieldProps) {
   return (
     <label className='form-label'>
       {label}:
@@ -35,4 +35,4 @@ export const InputField: React.FC<InputFieldProps> = ({
       />
     </label>
   );
-};
+}
