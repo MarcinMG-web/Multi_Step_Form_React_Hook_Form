@@ -28,7 +28,14 @@ export function SelectField({
         rules={rules}
         render={({ field }) => (
           <>
-            <select className='form-control' {...field}>
+            <select
+              className={
+                errors
+                  ? 'form-select border border-2 border-danger'
+                  : 'form-select'
+              }
+              {...field}
+            >
               <option value=''>--Please choose an option--</option>
               {options.map((el) => (
                 <option key={el} value={el}>

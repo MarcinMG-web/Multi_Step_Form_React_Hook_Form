@@ -28,7 +28,15 @@ export function InputField({
         rules={rules}
         render={({ field }) => (
           <>
-            <input type={type} className='form-control' {...field} />
+            <input
+              type={type}
+              className={
+                errors
+                  ? 'form-control border border-2 border-danger'
+                  : 'form-control'
+              }
+              {...field}
+            />
             {errors && <small className='error'>{errors.message}</small>}
           </>
         )}

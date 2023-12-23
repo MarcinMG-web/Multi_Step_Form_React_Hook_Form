@@ -26,7 +26,14 @@ export function TextareaField({
         rules={rules}
         render={({ field }) => (
           <>
-            <textarea className='form-control' {...field} />
+            <textarea
+              className={
+                errors
+                  ? 'form-control border border-2 border-danger'
+                  : 'form-control'
+              }
+              {...field}
+            />
             {errors && <small className='error'>{errors.message}</small>}
           </>
         )}
